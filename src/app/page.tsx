@@ -1,103 +1,74 @@
+"use client";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Image from "next/image";
+import { CiShoppingCart } from "react-icons/ci";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [opacity, setOpacity] = useState(100);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+  return (
+    <div className="flex flex-col">
+      <Header />
+
+      <div className="flex w-full bg-white py-4 px-4 justify-center">
+        <img
+          src="https://kom-uploads.s3.amazonaws.com/store-1599/hero--1709463990-w1600.jpg"
+          alt="Transition Image"
+          className={`
+        w-[100%]
+        rounded-md 
+        opacity-0
+        transition-opacity 
+        duration-[2000ms] 
+        ease-in-out
+        opacity-${opacity}
+        md:w-[50%]
+        lg:w-[80%]
+        xl:w-[50%]`}
+        />
+      </div>
+      <div className="flex-flex-col items-center py-6">
+        <span className="text-gray-600 text-[30px] font-bold px-6">
+          Бүх бараа
+        </span>
+        <hr className=" w-full m-auto max-w-[calc(100%-60px)] border-t border-gray-200 mt-2" />
+        <section className="flex  w-full px-8 py-8 justify-center
+        md:w-[50%]flex flex-col
+        lg:w-[80%]flex
+        xl:w-[50%]justify-center gap-6">
+            <div className="flex bg-yellow-100 p-4 rounded-lg shadow border border-yellow-300 h-100 w-140 mr-8 ">
+                <img src="https://kom-uploads.s3.amazonaws.com/store-1599/product-17624--1733167005-w900.jpg"
+                    className="w-80 h-90 rounded"/>
+                <div className="flex flex-col ml-4">
+                    <h3 className="text-gray-700 font-bold mt-20">The MongolZ - Pro Jersey 2025</h3>
+                    <p className="text-yellow-600 font-semibold mt-8">2XL ⬇</p>
+                    <p className="text-gray-600 italic mt-8">Official Jersey.<p>Азийн size учраас нэг size томруулж аваарай.</p></p>
+                    <div className="flex items-center justify-between mt-8">
+                        <p className="text-yellow-700 font-bold text-[20px]">150'000₮</p>
+                        <button className="flex items-center text-gray-700"><CiShoppingCart />Захиалах</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div className="flex bg-pink-100 p-4 rounded-lg shadow border border-pink-300 h-100 w-140">
+                <img src="https://kom-uploads.s3.amazonaws.com/store-1599/product-63535--1736944491-w900.jpg" 
+                    className="w-80 h-90 rounded"/>
+                <div className="flex flex-col ml-4">
+                    <h3 className="text-gray-700 font-bold mt-20">The MongolZ - Kids Jersey (No Sponsor Logos)</h3>
+                    <p className="text-yellow-600 font-semibold mt-8">2XS ⬇</p>
+                    <p className="text-gray-600 italic mt-8">Хүүхдэд зориулсан жижиг размерийн өмсгөл</p>
+                    <div className="flex items-center justify-between mt-8">
+                        <p className="text-yellow-700 font-bold text-[20px]">80’000₮</p>
+                        <button className="flex items-center text-gray-700"><CiShoppingCart />Захиалах</button>
+                    </div>
+                </div>
+            </div>
+        </section>  
+      </div>
+      <Footer/>
     </div>
-  );
+  )
 }
